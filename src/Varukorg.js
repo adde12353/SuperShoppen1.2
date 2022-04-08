@@ -13,10 +13,10 @@ const Varukorg = ({varukorg, handleAdd, handleRemove}) => {
                 </div>
               
                 <div className="varukorgs-pris">
-                    Antal: {item.quantity} * {item.pris} kr/st 
+                    Antal: {item.quantity} * {item.price} kr/st 
                 </div>
 
-                <div className="total-pris">Total pris: {item.quantity * item.pris}</div>
+                <div className="total-pris">Total pris: {item.quantity * item.price}</div>
             </div>
             
         ))}

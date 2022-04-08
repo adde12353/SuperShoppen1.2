@@ -34,24 +34,25 @@ h1 {
 .product-images {
   width: 300px;
   height: 300px;
+  margin: 20px;
 }
 
 .produkt-lista {
   display: flex;
   flex-wrap: wrap;
+  margin: auto;
+  justify-content: space-evenly;
 }
 
-.kort {
-  margin: auto;
-  padding: 15px;
-}
 
 .produkt-lista,
 .varukorg {
   max-width: 1000px;
   margin: auto;
   margin-top: 30px;
+
 }
+
 
 h2,
 p,
@@ -114,6 +115,8 @@ button {
 
 .single-produkt {
   display: flex;
+  margin: auto;
+  justify-content: center;
 }
 
 .produkt-bild,
@@ -121,4 +124,72 @@ button {
   width: 50%;
   text-align: left;
   padding-left: 30px;
+}
+
+.product-cards{
+  width: 200px;
+  margin: 5px;
+}
+
+.product-cards img{
+  width: 200px;
+  height: 250px;
+}
+
+.product-cards h2{
+  font-size: 18px;
+  
+}
+
+.product-gallery{
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+.användare{
+  display: flex;
+  border: 1px solid black;
+border-radius: 5px;
+text-align: left;
+flex-direction: column;
+width: 250px;
+margin-bottom: 30px;
+
+}
+
+.användare-lista{
+  margin: auto;
+  display: flex;
+max-width: 900px;
+flex-wrap: wrap;
+justify-content: space-evenly;
+
+}
+
+.sign-up-form{
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  flex-wrap: wrap;
+  margin: 50px auto;
+}
+.sign-up-form label{
+  margin: auto;
+  width: 50%;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.sign-up-form input{
+  margin: auto;
+  width: 50%;
+  
+}
+
+
+.sign-up-form button{
+  width: 50%;
+margin: 30px auto;
 }

@@ -4,12 +4,19 @@ import Home from './Home';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"
 import Produkt from './Produkt';
 import Produkter from './Produkter';
-import data from './components/Produktinfo/Data.js'
+import useFetch from './components/Produktinfo/useFetchproduct.js';
 import { useState } from 'react';
 import Varukorg from './Varukorg';
+import AdminPage from './pages/AdminPage';
+import Login from './pages/Login';
+import UserInfo from './pages/UserInfo';
+import useFetchUsers from './components/useFetchPeople';
 
 function App() {
-  const {produkter} = data;
+
+  const {Data:produkter} = useFetch("https://k4backend.osuka.dev/products/")
+  const {Data:userList} = useFetchUsers("https://k4backend.osuka.dev/users/")
+
   const [varukorg, setVarukorg] = useState([]);
 
   const handleAdd = (produkt) =>{
@@ -18,11 +25,10 @@ function App() {
         setVarukorg(varukorg.map((item) => item.id === produkt.id ?
         {...ProduktEx, quantity: ProduktEx.quantity +1 }: item)
         );
-        console.log("hej")
       }
         else{ 
           setVarukorg([...varukorg, {...produkt, quantity:1 }])
-          console.log("Nej")
+  
         }
       };
 
@@ -67,7 +73,17 @@ function App() {
              <Route path="/produkt/:id">
                <Produkt produkter={produkter} varukorg={varukorg} handleAdd={handleAdd} handleRemove={handleRemove}/>
              </Route>
-
+             <Route path="/admin">
+               <AdminPage produkter={produkter} userList={userList && userList}/>
+             </Route>
+             <Route path="/login">
+               <Login/>
+             </Route>
+             <Route path="/user-info">
+               <UserInfo/>
+             </Route>
+             
+             
              
 
          </Switch>
