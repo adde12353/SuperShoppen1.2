@@ -6,7 +6,7 @@ const Varukorg = ({varukorg, handleAdd, handleRemove}) => {
         {varukorg.map((item) =>(
             <div className="produkt" key={item.id}>
                 
-                <div className="bild-namn"><div><img className="small-img" src={item.image} /></div>{item.namn}</div>
+                <div className="bild-namn"><div><img className="small-img" src={item.image} alt={item.title}/></div>{item.namn}</div>
                 <div className="add-remove">
                     <button className="add-remove-btn" onClick={() => handleAdd(item)}>+</button>
                     <button className="add-remove-btn" onClick={() => handleRemove(item)}>-</button>

@@ -12,7 +12,7 @@ const Produkter = ({ handleAdd}) => {
             {produkter && produkter.map((data) => (
 
                 <div className="product-cards" key={data.id}>
-                    <img src={data.image}/>
+                    <img src={data.image} alt={data.title}/>
                     <Link className="list-links" to={`/produkt/${data.id}`}>
                     <h2>{data.title}</h2>
                     <p>{data.price}kr</p></Link>
