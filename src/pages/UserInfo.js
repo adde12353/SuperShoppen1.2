@@ -2,7 +2,7 @@ import { useRecoilValue  } from "recoil";
 import usersState from "../../src/stores/users";
 
 
-const UserInfo = ({}) => {
+const UserInfo = () => {
     const users = useRecoilValue(usersState)
     const token = localStorage.getItem("token")
     const userId = localStorage.getItem("id")

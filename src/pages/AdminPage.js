@@ -17,9 +17,9 @@ const AdminPage = () => {
    
    useEffect(() => {
     users && token && users.forEach(data => {
-        if(data.role == "admin"){
+        if(data.role === "admin"){
             const id = data.id
-            if ( id === userId){
+            if ( id == userId){ //Need to be a number
              setIsAdmin(true)
             }
         }
@@ -53,7 +53,7 @@ const AdminPage = () => {
             {isAdmin && produkter && produkter.map((data) => (
 
                 <div className="product-cards" key={data.id}>
-                    <img src={data.image}/>
+                    <img src={data.image} alt={data.title}/>
                   
                     <h2>{data.title}</h2>
                     

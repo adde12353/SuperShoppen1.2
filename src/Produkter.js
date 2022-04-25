@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { connect } from 'react-redux'
 import { useRecoilValue  } from "recoil";
 import productsState from "../src/stores/products";
 
@@ -25,11 +24,7 @@ const Produkter = ({ handleAdd}) => {
      );
 }
  
-const mapStateToProps = (state) =>{
-    return {
-        posts: state.posts
-    }
-}
+
 
 
 export default Produkter;
