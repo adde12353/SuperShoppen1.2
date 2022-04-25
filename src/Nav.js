@@ -6,43 +6,6 @@ import { useRecoilValue  } from "recoil";
 
  
 const NavBar = () => {
-    const users = useRecoilValue(usersState)
-
-
-    useEffect(() => {
-        users && token && users.forEach(data => {
-            if(data.role == "admin"){
-                const id = data.id
-                if ( id == userId){
-                 setIsAdmin(true)
-                }
-            }
-         });
-       })
-  
-
-    const token = localStorage.getItem("token")
-    const userId = localStorage.getItem("id")
-
-
-    const [isAdmin, setIsAdmin] =useState(false)
-
-  
-    
-  
-   
-   useEffect(() => {
-    users && token && users.forEach(data => {
-        if(data.role == "admin"){
-            const id = data.id
-            if ( id == userId){
-             setIsAdmin(true)
-            }
-        }
-     });
-   },[])
-  
-    
 
     return ( 
     <header className="header">

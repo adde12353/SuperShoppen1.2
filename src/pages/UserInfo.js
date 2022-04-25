@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useRecoilValue  } from "recoil";
 import usersState from "../../src/stores/users";
 

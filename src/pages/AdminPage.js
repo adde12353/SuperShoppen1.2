@@ -9,7 +9,6 @@ const AdminPage = () => {
 
     const token = localStorage.getItem("token")
     const userId = localStorage.getItem("id")
-    const userData = localStorage.getItem("userdata")
 
 
     const [isAdmin, setIsAdmin] =useState(false)
@@ -20,7 +19,7 @@ const AdminPage = () => {
     users && token && users.forEach(data => {
         if(data.role == "admin"){
             const id = data.id
-            if ( id == userId){
+            if ( id === userId){
              setIsAdmin(true)
             }
         }
@@ -54,7 +53,7 @@ const AdminPage = () => {
             {isAdmin && produkter && produkter.map((data) => (
 
                 <div className="product-cards" key={data.id}>
-                    <img src={data.image} alt="" srcset="" />
+                    <img src={data.image}/>
                   
                     <h2>{data.title}</h2>
                     
